@@ -53,7 +53,7 @@ public class ContentServiceImpl implements ContentService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//1 如果没有查询数据库
+		//1 如果没有查询redis数据库
 		TbContentExample example = new TbContentExample();
 		Criteria criteria = example.createCriteria();
 		//2 设置查询条件

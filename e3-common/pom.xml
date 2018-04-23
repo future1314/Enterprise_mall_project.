@@ -11,6 +11,21 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 依赖的jar包 -->
 	<dependencies>
+		<!-- JSP相关 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
 		<!-- 图片上传 -->
 		<dependency>
 			<groupId>fastdfs_client</groupId>
