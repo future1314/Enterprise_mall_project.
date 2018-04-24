@@ -694,7 +694,6 @@ var SFbest = {};
 			  shade.style.opacity = .2;
 			  document.body.appendChild(shade);
 		  }
-		  
 		  with((document.compatMode=='CSS1Compat')?document.documentElement:document.body)
 		  {
 			  var ch=clientHeight,sh=scrollHeight;

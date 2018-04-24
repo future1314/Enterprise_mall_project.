@@ -134,50 +134,49 @@
 	</div>
 	<!-- /footer -->
 	<script type="text/javascript">
-	var redirectUrl = "${redirect}";
-	var LOGIN = {
-			checkInput:function() {
+		var redirectUrl = "${redirect}";
+		var LOGIN = {
+			checkInput : function() {
 				$("#sfbestNameErr").attr("class", "").html("").prev().attr("class", "border");
 				$("#sfbestPwdErr").attr("class", "").html("").prev().attr("class", "border");
-				
-				if(!$("#formlogin #loginname").val()) {
+	
+				if (!$("#formlogin #loginname").val()) {
 					$("#sfbestNameErr").attr("class", "error").show().html("请输入用户名").prev().attr("class", "border-error");
 					return false;
 				}
-				if(!$("#formlogin input[name='password']").val()) {
-				    $("#sfbestPwdErr").attr("class", "error").show().html("请输入密码").prev().attr("class", "border-error");
-			        return false;
+				if (!$("#formlogin input[name='password']").val()) {
+					$("#sfbestPwdErr").attr("class", "error").show().html("请输入密码").prev().attr("class", "border-error");
+					return false;
 				}
 				$("#username").val($("#loginname").val());
 				return true;
 			},
-			doLogin:function() {
-				$.post("/user/login", $("#formlogin").serialize(),function(data){
+			doLogin : function() {
+				$.post("/user/login", $("#formlogin").serialize(), function(data) {
 					if (data.status == 200) {
-						jAlert('登录成功！',"提示", function(){
+						jAlert('登录成功！', "提示", function() {
 							if (redirectUrl == "") {
 								location.href = "http://localhost:8082";
 							} else {
 								location.href = redirectUrl;
 							}
 						});
-						
+	
 					} else {
-						jAlert("登录失败，原因是：" + data.msg,"失败");
+						jAlert("登录失败，原因是：" + data.msg, "失败");
 					}
 				});
 			},
-			login:function() {
+			login : function() {
 				if (this.checkInput()) {
 					this.doLogin();
 				}
 			}
-		
-	};
-	$(function(){
-		$("#login_sub").click(function(){
-			LOGIN.login();
+		};
+		$(function() {
+			$("#login_sub").click(function() {
+				LOGIN.login();
+			});
 		});
-	});
-</script>
+	</script>
 </html>
