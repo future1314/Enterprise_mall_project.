@@ -13,18 +13,26 @@ import cn.e3mall.service.ItemCatService;
 
 /**
  * 商品类目选择功能的实现就是获取商品选择类目的列表
- * @author Administrator
- *
+ * 
+ * @author Snailclimb
+ * @version 1.0
  */
 @Controller
 public class ItemCatController {
 
 	@Autowired
 	private ItemCatService itemCatService;
+
+	/**
+	 * 获取商品类目（类别）的Handle
+	 * 
+	 * @param parentId
+	 * @return
+	 */
 	@RequestMapping("/item/cat/list")
 	@ResponseBody
-	public List<EasyUITreeNode> getItemCatList(@RequestParam(value="id", defaultValue="0")Long parentId) {
-		
+	public List<EasyUITreeNode> getItemCatList(@RequestParam(value = "id", defaultValue = "0") Long parentId) {
+
 		List<EasyUITreeNode> list = itemCatService.getCatList(parentId);
 		return list;
 	}

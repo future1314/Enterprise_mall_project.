@@ -14,8 +14,7 @@ import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
 
 /**
- * 商品的列表的查询，商品的添加，删除，上架以及下架功能的实现
- * 目前：商品编辑功能暂未实现
+ * 商品的列表的查询，商品的添加，删除，上架以及下架功能的实现 目前：商品编辑功能暂未实现
  */
 @Controller
 public class ItemController {
@@ -64,7 +63,7 @@ public class ItemController {
 	 * 
 	 * @param itemId
 	 *            选中商品的数组
-	 * @return
+	 * @return 删除商品的结果
 	 */
 	@RequestMapping(value = "/rest/item/delete", method = RequestMethod.POST)
 	@ResponseBody
@@ -73,7 +72,9 @@ public class ItemController {
 		return result;
 	}
 
-	// 上架商品
+	/**
+	 * 上架商品
+	 */
 	@RequestMapping(value = "/rest/item/reshelf", method = RequestMethod.POST)
 	@ResponseBody
 	private E3Result upperoffItem(@RequestParam("ids") long[] itemId, TbItem item) {
@@ -81,7 +82,9 @@ public class ItemController {
 		return result;
 	}
 
-	// 下架商品
+	/**
+	 * 下架商品
+	 */
 	@RequestMapping(value = "/rest/item/instock", method = RequestMethod.POST)
 	@ResponseBody
 	private E3Result dropoffItem(@RequestParam("ids") long[] itemId, TbItem item) {

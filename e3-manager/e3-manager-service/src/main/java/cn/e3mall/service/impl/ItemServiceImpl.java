@@ -126,7 +126,7 @@ public class ItemServiceImpl implements ItemService {
 	};
 
 	/**
-	 * 获取商品类目列表的方法
+	 * 获取商品列表的方法
 	 */
 	@Override
 	public EasyUIDataGridResult getItemList(int page, int rows) {
