@@ -8,7 +8,10 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * 淘淘商城自定义响应结构
+ * <p>商城自定义响应结构，包含下列方法：</p>
+ * <p>1:将对象转换成json字符串</p>
+ * <p>2:将json字符串集转化为对象</p>
+ * <p>3:将json数据转换成pojo对象list</p>
  */
 public class JsonUtils {
 
@@ -20,6 +23,11 @@ public class JsonUtils {
      */
     public static String objectToJson(Object data) {
     	try {
+    		/**
+    		 * writeValueAsString()方法：
+    		 * 可用于将任何Java值序列化为String的方法。 
+    		 * 在功能上等效于使用java.io.StringWriter调用writeValue（Writer，Object）并构造String，但效率更高。
+    		 */
 			String string = MAPPER.writeValueAsString(data);
 			return string;
 		} catch (JsonProcessingException e) {
@@ -29,7 +37,7 @@ public class JsonUtils {
     }
     
     /**
-     * 将json结果集转化为对象
+     * 将json字符串集转化为对象
      * 
      * @param jsonData json数据
      * @param clazz 对象中的object类型
@@ -47,8 +55,6 @@ public class JsonUtils {
     
     /**
      * 将json数据转换成pojo对象list
-     * <p>Title: jsonToList</p>
-     * <p>Description: </p>
      * @param jsonData
      * @param beanType
      * @return

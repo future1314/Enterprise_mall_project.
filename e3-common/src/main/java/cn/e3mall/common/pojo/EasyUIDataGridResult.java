@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * <p>
  * 分页使用的Pojo对象，包含查询到的总记录数和每页显示条数两个属性
+ * </p>
  * 
  * @author Snailclimb
  *

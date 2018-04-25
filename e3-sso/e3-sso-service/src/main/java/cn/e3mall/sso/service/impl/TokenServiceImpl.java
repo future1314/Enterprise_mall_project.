@@ -12,11 +12,7 @@ import cn.e3mall.pojo.TbUser;
 import cn.e3mall.sso.service.TokenService;
 
 /**
- * 根据token取用户信息
- * <p>Title: TokenServiceImpl</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
- * @version 1.0
+ * <p>Description: 根据token取用户信息</p>
  */
 @Service
 public class TokenServiceImpl implements TokenService {
@@ -26,12 +22,15 @@ public class TokenServiceImpl implements TokenService {
 	@Value("${SESSION_EXPIRE}")
 	private Integer SESSION_EXPIRE;
 	
+	/**
+	 * 根据token获取用户信息
+	 */
 	@Override
 	public E3Result getUserByToken(String token) {
 		//根据token到redis中取用户信息
 		String json = jedisClient.get("SESSION:" + token);
 		//通过StringUtils工具类的isBlank方法判断取到的用户信息是否为空
-		//为空则说明取不到用户信息，登录已经过期，返回登录过期
+		//如果json为空说明没有取到用户信息，说明用户登录已经过去（redis中通过expire方法设置了过期时间）
 		if (StringUtils.isBlank(json)) {
 			return E3Result.build(201, "用户登录已经过期");
 		}

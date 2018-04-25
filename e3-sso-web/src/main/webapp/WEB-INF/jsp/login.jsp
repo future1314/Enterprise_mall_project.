@@ -152,6 +152,7 @@
 				return true;
 			},
 			doLogin : function() {
+				//jQuery ajax - serialize() 方法的前后端传参
 				$.post("/user/login", $("#formlogin").serialize(), function(data) {
 					if (data.status == 200) {
 						jAlert('登录成功！', "提示", function() {

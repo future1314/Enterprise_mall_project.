@@ -4,10 +4,17 @@ import java.util.List;
 
 import redis.clients.jedis.JedisCluster;
 
+/**
+ * <p>
+ * 集群版实现
+ * </p>
+ * 
+ * @author Snailclimb
+ * @version 1.0
+ */
 public class JedisClientCluster implements JedisClient {
-	
+
 	private JedisCluster jedisCluster;
-	
 
 	public JedisCluster getJedisCluster() {
 		return jedisCluster;

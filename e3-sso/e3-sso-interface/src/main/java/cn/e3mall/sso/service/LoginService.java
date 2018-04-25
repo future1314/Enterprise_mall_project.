@@ -4,9 +4,10 @@ import cn.e3mall.common.utils.E3Result;
 
 public interface LoginService {
 
-	//参数：用户名和密码
-	//业务逻辑：
-	/*
+
+	/**
+	 * 参数：用户名和密码
+	 * 业务逻辑：
 	 * 1、判断用户和密码是否正确
 	 * 2、如果不正确，返回登录失败
 	 * 3、如果正确生成token。

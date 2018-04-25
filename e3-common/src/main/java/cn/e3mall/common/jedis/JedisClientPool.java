@@ -5,8 +5,16 @@ import java.util.List;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
+/**
+ * <p>
+ * 单机版实现
+ * </p>
+ * 
+ * @author Snailclimb
+ * @version 1.0
+ */
 public class JedisClientPool implements JedisClient {
-	
+
 	private JedisPool jedisPool;
 
 	public JedisPool getJedisPool() {

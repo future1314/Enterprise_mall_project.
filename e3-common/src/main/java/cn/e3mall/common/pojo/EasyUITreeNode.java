@@ -2,16 +2,17 @@ package cn.e3mall.common.pojo;
 
 import java.io.Serializable;
 
+/**
+ * <p>
+ * 一个EasyUITreeNode对象实例便是tree的一个节点 { "id": 2, "text": "Node 2", "state":
+ * "closed" }
+ * </p>
+ * 
+ * @author Snailclimb
+ * @version 1.0
+ */
 public class EasyUITreeNode implements Serializable {
 
-	/**
-	 * 一个EasyUITreeNode对象实例便是tree的一个节点
-	 * {    
-       "id": 2,    
-       "text": "Node 2",    
-       "state": "closed"   
-        }
-	 */
 	private static final long serialVersionUID = -3722391707720182282L;
 
 	private long id;
