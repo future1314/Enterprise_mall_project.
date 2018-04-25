@@ -2,8 +2,11 @@ package cn.e3mall.item.pojo;
 
 import cn.e3mall.pojo.TbItem;
 
+/**
+ * 商品详情的pojo对象
+ */
 public class Item extends TbItem {
-	
+
 	public Item(TbItem tbItem) {
 		this.setId(tbItem.getId());
 		this.setTitle(tbItem.getTitle());
