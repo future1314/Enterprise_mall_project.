@@ -23,7 +23,7 @@ import cn.e3mall.common.utils.JsonUtils;
 @Controller
 public class PictureController {
 	
-	//取resource.properties文件中的IMAGE_SERVER_URL即图片服务器地址的值
+	//图片服务器地址
 	@Value("${IMAGE_SERVER_URL}")
 	private String IMAGE_SERVER_URL;
 

@@ -9,6 +9,9 @@ import cn.e3mall.common.utils.E3Result;
  * <p>
  * 内容类别相关接口的实现（包括：获取内容分类以及添加、更新、删除内容分类的接口）
  * </p>
+ * <p>
+ * 对应后台网站后台管理目录下的内容分类管理
+ * </p>
  * 
  * @author Snailclimb
  * @version 1.0

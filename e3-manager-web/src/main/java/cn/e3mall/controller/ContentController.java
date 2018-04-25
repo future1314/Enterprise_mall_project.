@@ -11,6 +11,14 @@ import cn.e3mall.common.utils.E3Result;
 import cn.e3mall.content.service.ContentService;
 import cn.e3mall.pojo.TbContent;
 
+/**
+ * <p>
+ * 内容管理Controller
+ * <p>
+ * 
+ * @author Snailclimb
+ * @version 1.0
+ */
 @Controller
 public class ContentController {
 
@@ -18,7 +26,11 @@ public class ContentController {
 	private ContentService contentService;
 
 	/**
-	 * 添加内容
+	 * 添加内容的Handle
+	 * 
+	 * @param content
+	 *            添加的内容对对象
+	 * @return 添加的结果
 	 */
 	@RequestMapping("/content/save")
 	@ResponseBody
@@ -28,7 +40,11 @@ public class ContentController {
 	}
 
 	/**
-	 * 更新内容
+	 * 更新内容的Handle
+	 * 
+	 * @param content
+	 *            更新后的内容对象
+	 * @return 更新的结果
 	 */
 	@RequestMapping("/content/update")
 	@ResponseBody
@@ -38,7 +54,13 @@ public class ContentController {
 	}
 
 	/**
-	 * 内容管理列表查询
+	 * 内容管理列表查询的Handle
+	 * 
+	 * @param categoryId
+	 *            内容分类id(比如是大广告下的内容还是小广告下的内容
+	 * @param page
+	 * @param rows
+	 * @return
 	 */
 	@RequestMapping("/content/query/list")
 	@ResponseBody
@@ -48,7 +70,11 @@ public class ContentController {
 	}
 
 	/**
-	 * 删除内容
+	 * 删除内容的Handle
+	 * 
+	 * @param itemId
+	 *            前台传来的内容id的数组（用户可能选择了不止删除一个内容，所以这里传的是数组）
+	 * @return
 	 */
 	@RequestMapping("/content/delete")
 	@ResponseBody
