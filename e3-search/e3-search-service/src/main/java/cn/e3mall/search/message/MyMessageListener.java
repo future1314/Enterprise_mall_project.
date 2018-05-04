@@ -5,11 +5,17 @@ import javax.jms.Message;
 import javax.jms.MessageListener;
 import javax.jms.TextMessage;
 
+/**
+ * 测试activemq与spring整合
+ * 
+ * @author Administrator
+ *
+ */
 public class MyMessageListener implements MessageListener {
 
 	@Override
 	public void onMessage(Message message) {
-		//取消息内容
+		// 取消息内容
 		TextMessage textMessage = (TextMessage) message;
 		try {
 			String text = textMessage.getText();
@@ -18,8 +24,7 @@ public class MyMessageListener implements MessageListener {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 }

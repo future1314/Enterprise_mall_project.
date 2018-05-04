@@ -13,13 +13,12 @@ import cn.e3mall.search.mapper.ItemMapper;
 
 /**
  * 监听商品添加消息，接收消息后，将对应的商品信息同步到索引库
- * <p>Title: ItemAddMessageListener</p>
- * <p>Description: </p>
- * <p>Company: www.itcast.cn</p> 
+ * 
+ * @author Snailclimb
  * @version 1.0
  */
 public class ItemAddMessageListener implements MessageListener {
-	
+
 	@Autowired
 	private ItemMapper itemMapper;
 	@Autowired
@@ -28,26 +27,26 @@ public class ItemAddMessageListener implements MessageListener {
 	@Override
 	public void onMessage(Message message) {
 		try {
-			//从消息中取商品id
+			// 从消息中取商品id
 			TextMessage textMessage = (TextMessage) message;
 			String text = textMessage.getText();
 			Long itemId = new Long(text);
-			//等待事务提交
+			// 等待事务提交
 			Thread.sleep(1000);
-			//根据商品id查询商品信息
+			// 根据商品id查询商品信息
 			SearchItem searchItem = itemMapper.getItemById(itemId);
-			//创建一个文档对象
+			// 创建一个文档对象
 			SolrInputDocument document = new SolrInputDocument();
-			//向文档对象中添加域
+			// 向文档对象中添加域
 			document.addField("id", searchItem.getId());
 			document.addField("item_title", searchItem.getTitle());
 			document.addField("item_sell_point", searchItem.getSell_point());
 			document.addField("item_price", searchItem.getPrice());
 			document.addField("item_image", searchItem.getImage());
 			document.addField("item_category_name", searchItem.getCategory_name());
-			//把文档写入索引库
+			// 把文档写入索引库
 			solrServer.add(document);
-			//提交
+			// 提交
 			solrServer.commit();
 		} catch (Exception e) {
 			e.printStackTrace();
